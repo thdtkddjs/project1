@@ -8,7 +8,7 @@ const pool = new Pool({
     password: "2119",
     port: 5432
 });
-MybatisMapper.createMapper(['C:/acorn2022_10/project1/resources/testmapper.xml']);
+MybatisMapper.createMapper(['./resources/testmapper.xml']);
 let format = {language: 'sql', indent: ' '};
 
 const testModel = {
