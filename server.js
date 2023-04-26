@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 const { Client } = require("pg");
 
 //매퍼를 불러온다
-mapper.createMapper(['C:/acorn2022_10/project1/resources/testmapper.xml']);
+mapper.createMapper(['./resources/testmapper.xml']);
 //포맷은 바꿀 예정이 없으니 미리 지정
 const format = {language: 'sql', indent: ''};
 
