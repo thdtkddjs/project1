@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="testMapper">  
+  <select id="selectAll">
+    SELECT
+      *
+    FROM
+      members
+  </select>
+  <insert id="insertJunk">
+    insert into members (name, addr)
+    values ( #{name}, #{addr})
+  </insert>
+  <delete id="deleteThis">
+    delete from members
+    where name = #{name}
+  </delete>
+  <update id="updateIt">
+    update members
+    set addr = #{addr}
+    where name = #{name}
+  </update>
+
+  <select id="selectId">
+    select *
+    from users
+    where id = #{id}
+  </select>
+  <insert id="insertUser">
+    insert into users (id, pwd, salt, name, regdate)
+    values (#{id}, #{pwd}, #{salt}, #{name}, now())
+  </insert>
+</mapper>

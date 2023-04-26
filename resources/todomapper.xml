@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="todoMapper">  
+  <select id='selectAll'>
+    select * from todo
+  </select>
+  <select id='selectOne'>
+    select * from todo
+    where id=#{id}
+  </select>
+  <insert id='insert'>
+    insert into todo
+    (id, content, done, targetdate)
+    values (#{id}, #{content}, #{done}, #{targetdate})
+  </insert>
+  <update id='update'>
+    update todo
+    set content=#{content}, done=#{done}, targetdate=#{targetdate}, cpldate=#{cpldate}
+    where id = #{id}
+  </update>
+  <delete id='delete'>
+    delete from todo
+    where id=#{id}
+  </delete>
+
+</mapper>
