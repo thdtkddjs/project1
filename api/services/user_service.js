@@ -11,6 +11,18 @@ module.exports= (app, dbClient, mapper, format, session) => {
         saveUninitialized: false
     }));
 
+    app.get('/api/createTable', (req,res)=>{
+        let param={};
+        const query = mapper.getStatement('testMapper', 'createTester', param, format);
+        const result = dbClient.query(query, (error, result)=>{
+            if(error){
+                res.sendStatus(500);
+            }else{
+                res.sendStatus(201);
+            }
+        })
+    })
+
     app.get('/api/select', (req, res)=>{
         let param = {};
         const query = mapper.getStatement('testMapper', 'selectAll', param, format);

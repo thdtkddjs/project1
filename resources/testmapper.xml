@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="testMapper">  
+  <create id="createTester">
+    create table members (
+      num serial primary key not null,
+      name varchar(25) not null,
+      addr varchar(25) not null
+    )
+  </create>
+
   <select id="selectAll">
     SELECT
       *

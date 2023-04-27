@@ -21,6 +21,7 @@ const format = {language: 'sql', indent: ''};
 //server의 정보를 지정
 const dbClient = new Client({
     user: "test",
+    //현재 후보 서버의 host는 192.168.0.103
     host: "localhost",
     database: "postgres",
     password: "2119",
@@ -43,6 +44,7 @@ app.use('/api',user_service);
 const router_ejs=require('./api/router/ejs.js')(app, session, ejs)
 app.use('', router_ejs);
 
+//router로 분리하려고 했으나 아직 작동 안함
 const router=require('./api/router/router.js')
 app.use('',router);
 
